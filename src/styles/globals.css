@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .body-cover {
+        @apply tw-w-full tw-bg-lightwhite tw-py-7;
+    }
+
+    .nav-container {
+        @apply tw-w-full tw-flex tw-justify-center tw-items-center tw-font-notojp;
+    }
+
+    .nav-container-flex {
+        @apply tw-container tw-flex tw-justify-between tw-items-center tw-px-4 lg:tw-px-0;
+    }
+
+    .header-text {
+        @apply [font-size:1.5em] tw-text-sm md:tw-text-lg md:[font-size:2em] tw-font-semibold tw-text-gray-800;
+    }
+
+    .nav-mid-list {
+        @apply tw-flex tw-justify-evenly tw-items-center tw-gap-x-7 tw-text-base;
+    }
+
+    .nav-mid-list li {
+        @apply tw-cursor-pointer tw-font-medium hover:tw-text-red-500;
+        transition: color 0.3s;
+    }
+
+    .nav-contact-btn {
+        @apply tw-border-2 tw-border-red-500 tw-px-6 tw-py-2 lg:tw-px-8 lg:tw-py-3 tw-font-medium  hover:tw-text-white hover:tw-bg-red-500 tw-relative tw-overflow-hidden;
+        transition: background 0.5s;
+        transition: color 0.2s;
+    }
+
+    .nav-center {
+        @apply tw-hidden tw-invisible tw-opacity-0 lg:tw-opacity-100 lg:tw-flex lg:tw-visible;
+    }
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(239, 168, 168, 0.6 );
+    z-index: 30;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
